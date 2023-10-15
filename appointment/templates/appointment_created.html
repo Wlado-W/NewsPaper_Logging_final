@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            color: white;
+        }
+        header {
+            background-color: #333;
+            padding: 20px;
+            border-bottom: 2px solid #000;
+        }
+        main {
+            padding: 20px;
+        }
+        h2, p {
+            margin: 0;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            padding: 10px;
+            border-top: 2px solid #000;
+        }
+    </style>
+    <title>Задание D6</title>
+</head>
+<body>
+     <header>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>{{ appointment.client_name }}, Спасибо за запись!</h2>
+        <p> Вы записаны на {{ appointment.date|date:"d-M-Y" }} по вопросу: {{ appointment.message|truncatechars:50 }} </p>
+    </main>
+    <footer>
+        Create by WladoW
+    </footer>
+</body>
+</html>

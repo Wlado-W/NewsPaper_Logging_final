@@ -1,0 +1,37 @@
+<!--  наследуемся от шаблона default.html -->
+{% extends 'flatpages/default.html' %} 
+ 
+{% load custom_filters %} <!-- не забываем заранее загружать наши фильтры! -->
+
+<!-- Название у нас будет из заголовка -->
+{% block title %}
+    Удаление статьи "{{ post.title|censor }}"
+{% endblock title %}
+ 
+<!-- В контенте на странице мы выводим саму статью, айди которого было передано в адрес -->
+{% block content %}
+    <br>
+    <h2>Вы действительно хотите удалить данный пост?</h2>
+    <br>
+    <table style="border-collapse: separate; border-spacing: 20px 0;">
+        <thead>
+            <th> Заголовок </th>
+            <th> Дата публикации </th>
+            <th> Статья </th>
+            <th> Автор </th>
+        </thead>
+        <tr>
+            <td> {{ post.title|censor }} </td>
+            <td> {{ post.dateCreation|date:'d M Y h:m' }} </td>
+            <td> {{ post.text|censor }} </td>
+            <td> {{ post.author }} </td>
+        </tr>
+    </table>
+    <br>    
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Подтвердить">
+    </form>
+    <br>
+    <a href="/news/"> <--Вернуться к новостям </a>
+{% endblock content %}

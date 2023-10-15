@@ -1,0 +1,18 @@
+<!--  наследуемся от шаблона default.html -->
+{% extends 'flatpages/default.html' %} 
+ 
+{% load custom_filters %} <!-- не забываем заранее загружать наши фильтры! -->
+
+<!-- Название у нас будет из заголовка -->
+{% block title %}
+    Статья "{{ post.title|censor }}"
+{% endblock title %}
+ 
+<!-- В контенте на странице мы выводим саму статью, айди которого было передано в адрес -->
+{% block content %}
+    <br>
+    <h3>Статья: {{ post.title|censor }}</h3>
+    <h6>Дата публикации: {{ post.dateCreation|date:'d M Y h:m' }}</h6>
+    <br>
+    {{ post.text|censor }}
+{% endblock content %}

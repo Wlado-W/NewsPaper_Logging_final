@@ -1,0 +1,29 @@
+{% load custom_filters %}
+
+{% if news %}
+    {% for post in news %}
+        - - -
+        {#% include 'news_app/inc/details.html' %#}
+
+        <h5><a href="{% url 'post_detail' post.id %}"> {{ post.title|censor|truncatechars:30  }}</a></h5>
+        <h6>
+            {{ post.text|censor|truncatechars:30 }}
+        </h6>
+        <p>
+            By <span> {{ post.author }} </span>
+            on <span> {{ post.dateCreation }} </span>
+            Category:
+            {% for c in post.postCategory.values %}
+                <a href="{% url 'category' c.id %}">{{c.name}}</a>
+            {% endfor %}
+        </p>
+        
+        
+    {% endfor %}
+
+{% else %}
+    <h2>Пока нет новостей в этой категории</h2>
+
+{% endif %}
+
+{% include 'news_app/inc/pagination.html' %} 

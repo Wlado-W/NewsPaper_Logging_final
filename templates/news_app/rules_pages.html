@@ -1,0 +1,23 @@
+<!--  наследуемся от шаблона default.html -->
+{% extends 'flatpages/default.html' %}
+
+<!--   не забываем заранее загружать наши фильтры! -->
+
+<!-- Название NEWS -->
+{% block title %}
+    Задание модуля D5
+{% endblock title %}
+
+{% block content %}
+    <div style="text-align: left; margin-left: auto;">
+        <br>
+        <h3>Правила:</h3>
+        <hr>
+        <ol>
+            <li>НЕ ОЗОРНИЧАТЬ и НЕ МАТЕРИТЬСЯ</li>
+
+        </ol>
+        <hr>
+    </div>
+
+{% endblock content %}

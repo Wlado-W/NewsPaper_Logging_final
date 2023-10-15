@@ -1,0 +1,107 @@
+<!--  наследуемся от шаблона default.html -->
+{% extends 'flatpages/default.html' %} 
+ 
+{% load custom_filters %} <!-- не забываем заранее загружать наши фильтры! -->
+
+<!-- Название у нас будет из заголовка -->
+{% block title %}
+    Поиск статьи
+{% endblock title %}
+ 
+<!-- В контенте на странице мы выводим саму статью, айди которого было передано в адрес -->
+{% block content %}
+    <br>
+    
+    {% if news %} <!-- Выводим статьи только, если они есть, с помощью тега if -->
+
+        <!-- Перед таблицей добавим форму для поиска -->
+        <form method="GET">
+            {{ filter.form }} <!-- Форму от фильтров за нас сделает Django. А вот кнопку, увы, придётся делать самому -->
+            <input type="submit" value="Найти">
+            <br><br>
+            <a href="{% url 'post_search' %}">Сбросить фильтр</a>
+        </form> 
+        
+        <br>
+
+        <h3>Всего найдено статей:  {{ filter.qs|length }} </h3>
+        <br>
+
+        <table style="border-collapse: separate; border-spacing: 20px 0;">
+            <thead>
+                <th> Заголовок </th>
+                <th></th>
+                <th></th>
+                <th> Дата публикации </th>
+                <th> Статья </th>
+                <th> Автор </th>
+            </thead>
+
+            {% for post in filter.qs %} <!-- поменяем news на filter.qs, т.к. теперь мы забираем уже отобранную по каким-то параметрам информацию -->
+            <!-- Для каждой статьи будет генерироваться новая строчка, 
+            т.е. новый html код. При этом сам цикл работает точно так же, как и в python. 
+            post — переменная цикла, т.е. наша статья, взятая из общего списка -->
+
+                <tr>
+                    <td class="text-start"> 
+                        <a href="{% url 'post_detail' post.id %}"> {{ post.title|censor|truncatechars:30 }}</a> 
+                        <!-- При нажатии на заголовок статьи в таблице нас теперь будет перекидывать на страницу с информацией о товаре -->
+                        <!-- используем собственый фильтр censor -->
+                    </td>
+                    
+                    <td>        
+                        <a href="{% url 'post_update' post.id %}"><u>Редактировать</u></a> 
+                        <!-- добавим ссылку на редактирование товара-->
+                    </td>
+                    
+                    <td>
+                        <a href="{% url 'post_delete' post.id %}"><u> Удалить </u></a> 
+                        <!-- добавим ссылку на удаление товара-->
+                    </td> 
+
+                    <td> {{ post.dateCreation|date:'d M Y h:m' }} </td>
+                    
+                    <td class="text-start"> {{ post.text|censor|truncatechars:50 }} </td> <!-- используем собственый фильтр censor и дописываем специальный фильтр, 
+                        чтобы ограничить количество символов до 50. Все остальные символы превратятся в многоточие. -->
+
+                    <td> {{ post.author }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+        
+        {% else %} <!-- Если статей нет, то говорим что статей нет ;) -->
+            <br>
+            <h2>Статей нет!</h2>
+
+    {% endif %}
+    
+    <!-- Проверяем что поддерживается постраничный вывод -->
+    {% if is_paginated %}
+        
+        <!-- Если доступна предыдущая страница, то даём ссылку на неё и самую первую страницу -->
+        {% if page_obj.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{ page_obj.previous_page_number }}"><<<</a>
+        {% endif %}
+
+        <!-- Показываем только текущую страницу и ближайшие к ней, чтобы список не тянулся и не захламлял страницу -->
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a>{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        <!-- Если есть следующая страница, то даём ссылку на неё и на самую последнюю страницу -->
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">>>></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+
+    {% endif %}
+
+    <br>
+    <a href="/news/"> <--Вернуться к новостям </a>
+
+{% endblock content %}
