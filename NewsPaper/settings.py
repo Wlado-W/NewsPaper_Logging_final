@@ -137,21 +137,21 @@ ACCOUNT_FORMS = {'signup': 'sign.models.CommonSignupForm'}
 # [-- Модуль D6.2. Отправляем письма через Django
 EMAIL_HOST = 'smtp.yandex.ru' # адрес сервера Яндекс-почты для всех один и тот же
 EMAIL_PORT = 465 # порт smtp сервера тоже одинаковый
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') # ваше имя пользователя,
+EMAIL_HOST_USER = 'zimina.nina202020@yandex.ru' # ваше имя пользователя,
 # например если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') # пароль от почты
+EMAIL_HOST_PASSWORD = 'gtrahytkwiifmkae' # пароль от почты
 EMAIL_USE_SSL = True # Яндекс использует ssl, подробнее о том, что это, почитайте на Википедии, но включать его здесь обязательно
 # --]
 
 # [-- Модуль D6.2. Отправляем письма через Django
 # Есть варианты отправлять информацию по почте, например, какой-то определённой группе пользователей — админам.
 # ADMINS = [(manager.split('|')[0], manager.split('|')[1]) for manager in os.getenv("ADMINS").split(',')]
-SERVER_EMAIL = os.getenv('SERVER_EMAIL') # это будет у нас вместо аргумента FROM в массовой рассылке
+SERVER_EMAIL = 'zimina.nina202020@yandex.ru' # это будет у нас вместо аргумента FROM в массовой рассылке
 # --]
 
 # [--D6.3. Django-allauth и email. Регистрация пользователя с подтверждением по электронной почте
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER # если вы используете Яндекс, то не забудьте добавить + ‘@yandex.ru’
-DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')  # здесь указываем уже свою ПОЛНУЮ почту с которой будут отправляться письма
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER # здесь указываем уже свою ПОЛНУЮ почту с которой будут отправляться письма
 # если вы используете Яндекс, то не забудьте добавить + ‘@yandex.ru’
 
 # Internationalization
