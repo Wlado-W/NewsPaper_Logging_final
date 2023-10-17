@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView, UpdateView, CreateView, D
 # импортируем класс ListView, который говорит нам о том, что в этом представлении мы будем выводить список объектов из БД
 # импортируем класс DetailView получения деталей объекта
 from django.core.paginator import Paginator  # импортируем класс, позволяющий удобно осуществлять постраничный вывод
-from .models import Post, Category, Author, PostCategory  # Дополнительно импортируем категорию, чтобы пользователь мог её выбрать
+from .models import Post, Category, Subscription, Author, PostCategory  # Дополнительно импортируем категорию, чтобы пользователь мог её выбрать
 from .filters import PostFilter  # импортируем недавно написанный фильтр
 from .forms import PostForm  # импортируем нашу форму
 from django.views.generic.edit import CreateView
@@ -19,6 +19,12 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import View
+from django.shortcuts import redirect
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
+
+
+
 
 
 
@@ -38,6 +44,7 @@ class NewsList(ListView):
 
 
 # дженерик для получения деталей о товаре
+@method_decorator(cache_page(60*15), name='dispatch')
 class PostDetailView(LoginRequiredMixin, DetailView):
     template_name = 'news_app/post_detail.html'
     queryset = Post.objects.all()
@@ -111,13 +118,26 @@ class PostCategoryView(ListView):
         subscribed = category.subscribers.filter(email=user.email)
         if not subscribed:
             context['category'] = category
+
+
         return context
+
+class AllCategoriesView(ListView):
+    model = Category
+    template_name = 'news_app/all_categories.html'
+    context_object_name = 'categories'
+
+    def get_queryset(self):
+        return Category.objects.all()
+
+
 
 
 @login_required
 def subscribe_to_category(request, pk):  # подписка на категорию
     user = request.user
     category = Category.objects.get(id=pk)
+
 
     if not category.subscribers.filter(id=user.id).exists():
         category.subscribers.add(user)

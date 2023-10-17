@@ -11,7 +11,7 @@
     <div>
     {% if category.id %}
         <h3>Подписаться на категорию <strong>{{ category.name }}?</strong></h3>
-        <h4><button> <a href="{% url 'subscribe' category.id %}"> Подписаться </a></button></h4>
+        <h4><button> <a href="{% url 'news:subscribe' category.id %}"> Подписаться </a></button></h4>
     <hr>
     {% endif %}
     </div>

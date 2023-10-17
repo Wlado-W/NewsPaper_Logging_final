@@ -1,0 +1,12 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %} All Categories {% endblock title %}
+
+{% block content %}
+    <h3>All Categories</h3>
+    <ul>
+        {% for category in categories %}
+            <li><a href="{% url 'news:category' category.id %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

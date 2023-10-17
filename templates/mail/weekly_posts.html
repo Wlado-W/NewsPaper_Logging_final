@@ -13,7 +13,7 @@
     <p>Нажмите на ссылку, чтобы прочитать статью:
         {% for post in news %}
             - - -
-            <a href="http://127.0.0.1:8000{% url 'post_detail' post.id %}"> <h3>{{ post.title }}</h3> </a>
+            <a href="http://127.0.0.1:8000{% url 'news:post_detail' post.id %}"> <h3>{{ post.title }}</h3> </a>
             {{ post.preview|truncatechars:30 }}. Автор: {{post.author}}
         {% endfor %}
     </p>

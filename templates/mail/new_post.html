@@ -13,7 +13,7 @@
         В рубрике <strong>{{category.name}}</strong> появился новый пост от <strong>{{post.author}}</strong>
     </h3>
     <p>Нажмите на ссылку ниже, чтобы прочитать статью:
-        <a href="http://127.0.0.1:8000{% url 'post_detail' post.id %}"> <h3>{{ post.title }}</h3> </a>
+        <a href="http://127.0.0.1:8000{% url 'news:post_detail' post.id %}"> <h3>{{ post.title }}</h3> </a>
         {{ post.preview|truncatechars:30 }}
     </p>
 
