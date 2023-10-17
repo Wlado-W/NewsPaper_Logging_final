@@ -25,12 +25,11 @@ def new_post_subscription(instance):  # вызывается в signals.py
             },
         )
         msg = EmailMultiAlternatives(
-            subject=email_subject,
-            text_content = 'Простой текст письма'
+            body='Ткс письма',
             from_email=settings.DEFAULT_FROM_EMAIL,
-            to_email= user_emails,
+            to=[user_emails, ]
         )
 
-        msg = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
+
         msg.attach_alternative(html, 'text/html')
         msg.send()
