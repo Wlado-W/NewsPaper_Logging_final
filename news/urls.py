@@ -4,7 +4,11 @@ from .views import subscribe_to_category, unsubscribe_from_category
 from .views import AppointmentView
 from .views import PostCategoryView
 from .views import AllCategoriesView
-
+from .views import view_log
+from .views import errors_log
+from .views import security_log
+from .views import general_log
+from .views import log_links
 
 
 
@@ -26,5 +30,9 @@ urlpatterns = [
     path('category/<int:pk>', PostCategoryView.as_view(), name='category'), # Ссылка на категории
     path('subscribe/<int:pk>', subscribe_to_category, name='subscribe'), # Ссылка на подписчиков
     path('unsubscribe/<int:pk>', unsubscribe_from_category, name='unsubscribe'), # Ссылка на отписку
-
+    path('log_links/', log_links, name='log_links'),
+    path('view_log/', view_log, name='log_view'),
+    path('general_log/', general_log, name='general_log'),
+    path('errors_log/', errors_log, name='errors_log'),
+    path('security_log/', security_log, name='security_log'),
 ]

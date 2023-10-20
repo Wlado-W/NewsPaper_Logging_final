@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Логирование</title>
+</head>
+<body>
+    <h1>Содержимое лог-файла View.log</h1>
+    <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'news:view_log' %}">Просмотреть View.log</a></li>
+    <h1>Содержимое лог-файла Errors.log</h1>
+    <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'news:errors_log' %}">Просмотреть Errors.log</a></li>
+    <h1>Содержимое лог-файла General.log</h1>
+    <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'news:general_log' %}">Просмотреть General.log</a></li>
+    <h1>Содержимое лог-файла Security.log</h1>
+    <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'news:security_log' %}">Просмотреть Security.log</a></li>
+</body>
+</html>

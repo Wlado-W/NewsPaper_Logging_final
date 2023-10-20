@@ -1,0 +1,365 @@
+[2023-10-18 18:10:52,316] * [ERROR] Internal Server Error: /news/log/view/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f9ab0b07040>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 219, in view_log
+    return render(request, 'log_page.html', {'log_content': log_content})
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-18 18:10:52,336] * [ERROR] "GET /news/log/view/ HTTP/1.1" 500 131876 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-18 18:12:15,421] * [ERROR] Internal Server Error: /news/log/view/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("'new' is not a registered namespace"), <traceback object at 0x7f9ab13d5a80>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'new'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 219, in view_log
+    return render(request, 'log_page.html', {'log_content': log_content})
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'new' is not a registered namespace
+[2023-10-18 18:12:15,441] * [ERROR] "GET /news/log/view/ HTTP/1.1" 500 133918 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-18 18:12:49,993] * [ERROR] Internal Server Error: /news/log/view/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f9ab0a96240>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 219, in view_log
+    return render(request, 'log_page.html', {'log_content': log_content})
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-18 18:12:50,009] * [ERROR] "GET /news/log/view/ HTTP/1.1" 500 132764 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-18 18:17:38,133] * [ERROR] Internal Server Error: /news/log/view/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f9ab13f4440>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 219, in view_log
+    return render(request, 'log_page.html', {'log_content': log_content})
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-18 18:17:38,170] * [ERROR] "GET /news/log/view/ HTTP/1.1" 500 132764 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-18 18:22:23,532] * [ERROR] Internal Server Error: /news/view_log/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f44e0700300>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 219, in view_log
+    return render(request, 'log_page.html', {'log_content': log_content})
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-18 18:22:23,543] * [ERROR] "GET /news/view_log/ HTTP/1.1" 500 132627 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-18 18:31:44,512] * [ERROR] Internal Server Error: /news/log_links/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f2c8862a9c0>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 234, in log_links
+    return render(request, 'log_page.html')
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-18 18:31:44,519] * [ERROR] "GET /news/log_links/ HTTP/1.1" 500 131118 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-18 18:33:03,277] * [ERROR] Internal Server Error: /news/log_links/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news/view_log' not found. 'news/view_log' is not a valid view function or pattern name."), <traceback object at 0x7f2c88665380>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 234, in log_links
+    return render(request, 'log_page.html')
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news/view_log' not found. 'news/view_log' is not a valid view function or pattern name.
+[2023-10-18 18:33:03,279] * [ERROR] "GET /news/log_links/ HTTP/1.1" 500 130639 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-20 03:32:58,093] * [ERROR] Internal Server Error: /news/log_links/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news/view_log' not found. 'news/view_log' is not a valid view function or pattern name."), <traceback object at 0x7f3bc333e5c0>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 234, in log_links
+    return render(request, 'log_page.html')
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news/view_log' not found. 'news/view_log' is not a valid view function or pattern name.
+[2023-10-20 03:32:58,181] * [ERROR] "GET /news/log_links/ HTTP/1.1" 500 131305 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-20 03:39:58,288] * [ERROR] Internal Server Error: /news/log_links/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news/view_log' not found. 'news/view_log' is not a valid view function or pattern name."), <traceback object at 0x7f3bc3378200>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 234, in log_links
+    return render(request, 'log_page.html')
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news/view_log' not found. 'news/view_log' is not a valid view function or pattern name.
+[2023-10-20 03:39:58,308] * [ERROR] "GET /news/log_links/ HTTP/1.1" 500 131526 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-20 03:41:15,437] * [ERROR] Internal Server Error: /news/log_links/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f3bc3cdf240>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 234, in log_links
+    return render(request, 'log_page.html')
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-20 03:41:15,443] * [ERROR] "GET /news/log_links/ HTTP/1.1" 500 131391 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-20 03:43:17,161] * [ERROR] Internal Server Error: /news/log_links/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f3bc338bf00>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 234, in log_links
+    return render(request, 'log_page.html')
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-20 03:43:17,170] * [ERROR] "GET /news/log_links/ HTTP/1.1" 500 132142 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
+[2023-10-20 03:43:20,629] * [ERROR] Internal Server Error: /news/log_links/ /usr/lib/python3/dist-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name."), <traceback object at 0x7f3bc3284240>)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/wladopython/Рабочий стол/block D/D12/NewsPaper/news/views.py", line 234, in log_links
+    return render(request, 'log_page.html')
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/lib/python3/dist-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_log' not found. 'view_log' is not a valid view function or pattern name.
+[2023-10-20 03:43:20,645] * [ERROR] "GET /news/log_links/ HTTP/1.1" 500 132142 /usr/lib/python3/dist-packages/django/core/servers/basehttp.py None
